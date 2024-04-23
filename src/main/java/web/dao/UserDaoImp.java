@@ -2,17 +2,23 @@ package web.dao;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import web.model.User;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import javax.persistence.*;
 
-@Repository
+@Service
 public class UserDaoImp implements UserDao {
+    public EntityManager em;
 
     @Autowired
-    private EntityManager em;
+    public UserDaoImp(EntityManager em) {
+        this.em = em;
+    }
+
 
     @Override
     public void create(User user) {

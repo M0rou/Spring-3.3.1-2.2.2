@@ -1,7 +1,9 @@
 package web.dao;
 
+import org.springframework.stereotype.Service;
 import web.model.User;
 
+@Service
 public interface UserDao {
     void create(User user);
     User getUser(int i);
