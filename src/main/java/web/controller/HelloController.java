@@ -3,7 +3,6 @@ package web.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +13,7 @@ public class HelloController {
 	@GetMapping(value = "/")
 	public String printWelcome(ModelMap model) {
 		List<String> messages = new ArrayList<>();
-		messages.add("Hello! This is default page. Please, change your URL.");
+		messages.add("Hello! This is default page. Please, press button.");
 		model.addAttribute("messages", messages);
 		return "index";
 	}
